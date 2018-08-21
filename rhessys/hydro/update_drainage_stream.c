@@ -249,7 +249,7 @@ void  update_drainage_stream(
 	/*	calculate any return flow to the stream in this patch   */
 	/*	and route any infiltration excess			*/
 	/*--------------------------------------------------------------*/
-	/*if ((patch[0].sat_deficit-patch[0].rz_storage-patch[0].unsat_storage) < -1.0*ZERO) {
+	if ((patch[0].sat_deficit-patch[0].rz_storage-patch[0].unsat_storage) < -1.0*ZERO) {
 		return_flow = compute_varbased_returnflow(patch[0].std * command_line[0].std_scale, 
 			patch[0].rz_storage+patch[0].unsat_storage,
 			patch[0].sat_deficit, &(patch[0].litter));
@@ -257,7 +257,7 @@ void  update_drainage_stream(
 		patch[0].sat_deficit += (return_flow - (patch[0].unsat_storage+patch[0].rz_storage));;
 		patch[0].unsat_storage = 0.0;
 		patch[0].rz_storage = 0.0;
-	}*/
+	}
 
 	/*--------------------------------------------------------------*/
 	/*	calculated any N-transport associated with return flow  */
